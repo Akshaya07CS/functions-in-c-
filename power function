@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int power(int x, int y);
+
+int power(int x, int y) {
+    int result = 1, i;
+    for (i = 1; i <= y; i++) {
+        result = result * x;
+    }
+    return result;
+}
+
+int main() {
+    int base, exp;
+    printf("Enter the base:");
+    scanf("%d", &base);
+    printf("Enter the exp (non negative integer):");
+    scanf("%d", &exp);
+
+    if (exp < 0) {
+        printf("error: exp should be a non negative integer.\n");
+        return 1;
+    }
+
+    int result = power(base, exp);
+    printf("%d^%d = %d\n", base, exp, result);
+    return 0;
+}
