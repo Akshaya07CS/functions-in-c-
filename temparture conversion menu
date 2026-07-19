@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+float fahrenheit_to_celsius(float f);
+float celsius_to_fahrenheit(float c);
+
+float fahrenheit_to_celsius(float f) {
+    return (f - 32) * 5 / 9;
+}
+
+float celsius_to_fahrenheit(float c) {
+    return (c * 9 / 5) + 32;
+}
+
+int main() {
+    int choice;
+    float temp, result;
+
+    do {
+        printf("\nMenu:\n");
+        printf("1. Fahrenheit to Celsius\n");
+        printf("2. Celsius to Fahrenheit\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter Fahrenheit value: ");
+                scanf("%f", &temp);
+                result = fahrenheit_to_celsius(temp);
+                printf("Celsius value: %f\n", result);
+                break;
+            case 2:
+                printf("Enter Celsius value: ");
+                scanf("%f", &temp);
+                result = celsius_to_fahrenheit(temp);
+                printf("Fahrenheit value: %f\n", result);
+                break;
+            case 3:
+                printf("Exiting program.\n");
+                break;
+            default:
+                printf("Invalid choice!\n");
+        }
+    } while (choice != 3);
+
+    return 0;
+}
