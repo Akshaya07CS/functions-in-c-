@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int power(int base, int a);
+
+int power(int base, int a) {
+    if (a == 0)
+        return 1;
+    else
+        return base * power(base, a - 1);
+}
+
+int main() {
+    int base1, e, result;
+    printf("Enter the base number:");
+    scanf("%d", &base1);
+    printf("Enter
